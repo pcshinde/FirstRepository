@@ -1,0 +1,78 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.modal{
+  text-align: center;
+  align-content: center;
+}
+
+#slider {
+  margin: 50px;
+}
+
+.value {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin: 0 0 0 -20px;
+  width: 40px;
+  text-align: center;
+  display: block;
+
+  /* optional */
+
+  font-weight: normal;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.price-range-both.value {
+  width: 100px;
+  margin: 0 0 0 -50px;
+  top: 26px;
+}
+
+.price-range-both {
+  display: none;
+}
+
+.value i {
+  font-style: normal;
+}
+
+body div.ui-slider-range.ui-widget-header {
+  background: #F44336;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+  background: #2ecaf9 !important;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  background: #2ecaf9 !important;
+  border-radius: 50%;
+  font-size: 21px;
+  border: none !important;
+  box-shadow: 0 0 7px #306473;
+}
+
+span.ui-slider-handle.ui-corner-all.ui-state-default:focus {
+  outline: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.mat-slider {
+  width: 300px;
+}

@@ -1,0 +1,23 @@
+<div class="empdetails">
+  <input type="number" placeholder="Employee ID" #ref1> <br>
+  <input type="text" placeholder="Employee Name" #ref2> <br>
+  <input type="date" #ref3> <br>
+  <button type="button" (click)='submitted(ref1.value, ref2.value, ref3.value)'>Submit</button>
+</div>
+
+<button type="button" (click)="show()">{{x?"Hide":"Show"}}</button>
+
+<div *ngIf="x">
+  <div *ngFor="let i of details">
+    <table>
+      <th>
+        Employee Details
+      </th>
+      <tr>
+        <td>{{i.eid}}</td>
+        <td>{{i.ename}}</td>
+        <td>{{i.dob}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

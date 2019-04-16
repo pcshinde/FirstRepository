@@ -1,0 +1,86 @@
+<div class="container md-3">
+
+  <!-- Button to Open Add Product Information -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add Product
+  </button>
+
+  <!-- The Modal for Product -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add Product Information</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+
+        <!-- Modal body for Add Product -->
+        <div class="modal-body">
+          <mat-card>
+            <div class="container">
+              <div class="row">
+
+                <form action="" method="post" name="form" #ref="ngForm">
+                  <input #fp id="fileUpload" type="file">
+                  <span id="lblError" style="color: red;" *ngIf="error">Only PNG, JPG and JPEG extensions allowed</span>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <select name="statename" #ref (change)="sendStateName(ref.value)">
+                        <option value="" disabled="disabled">--Choose Category--</option>
+                        <option *ngFor="let i of states" [value]=i.statename>{{i.statename}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <select name="district">
+                        <option value="" disabled="disabled">--Choose Sub-category--</option>
+                        <option *ngFor="let j of selectedDistricts" [value]=j.districtName>{{j.districtName}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <input type="number" name="minrange" id="minr" placeholder="Minimum Price">
+                    <input type="number" name="maxrange" id="maxr" placeholder="Maximum Price">
+                  </div>
+
+                  <textarea name="" id="" cols="20" rows="1" placeholder="Pickup Address"></textarea>
+
+                  <div>
+                    <input type="submit" id="btnUpload" value="Add">
+                  </div>
+                  <hr>
+                </form>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+
+        <!-- Modal footer for Add Product -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <igx-slider id="slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="1000" [lowerBound]="100"
+    [upperBound]="900" [(ngModel)]="priceRange"></igx-slider>
+  <div class="wrapper">
+    <igx-input-group>
+      <input igxInput id="lowerInput" type="text" [ngModel]="priceRange.lower | currency"
+        (blur)="updatePriceRange($event.target)" />
+      <label igxLabel for="lowerInput">Lower price:</label>
+    </igx-input-group>
+    <igx-input-group>
+      <input igxInput id="upperInput" type="text" [ngModel]="priceRange.upper | currency"
+        (blur)="updatePriceRange($event.target)" />
+      <label igxLabel for="upperInput">Upper price:</label>
+    </igx-input-group>
+  </div>
+</div>

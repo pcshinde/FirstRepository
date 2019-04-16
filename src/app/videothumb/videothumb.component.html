@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Video Thumbnail</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form name="form" #vid="ngForm" (ngSubmit)="submiturl(vid.value)">
+        <div class="form-group">
+          <label for="vlink">First Name</label>
+          <input required type="url" name="vlink" id="vlink" class="form-control" ngModel #vlink="ngModel">
+        </div>
+        <button class="btn btn-primary" [disabled]="vid.form.pristine || vid.form.invalid">submit</button> <br>
+        <label *ngIf="vid.form.pristine || vid.form.invalid">Please provide a link</label>
+      </form>
+    </div>
+    <div class="col-md-6"><iframe src={{link}} frameborder="0"></iframe></div>
+  </div>
+</div>

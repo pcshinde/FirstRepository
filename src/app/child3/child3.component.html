@@ -1,0 +1,46 @@
+<div class="center">
+  <div style="text-align:justify">
+    <form #ref="ngForm" (ngSubmit)="SubmitData(ref.value)">
+      <fieldset>
+        <legend>
+          Enter name
+        </legend>
+        <input type="text" name="name" ngModel><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>Enter Password</legend>
+        <input type="password" name="password" ngModel><br>
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="b">
+  <form #re="ngForm" (ngSubmit)="SaveRecord()">
+    <input type="text" name="name1" [(ngModel)]=name>
+    <input type="text" name="password1" [(ngModel)]=password>
+    <button type="submit">Save</button>
+  </form>
+</div>
+<table class="table">
+  <thead>
+    <th>
+      <pre> Name</pre>
+    </th>
+    <th>
+      <pre>Password</pre>
+    </th>
+  </thead>
+  <tr *ngFor="let i of empdata; let in = index">
+    <td>{{i.name}}</td>
+    <td>{{i.password}}</td>
+    <button type="button" (click)="DeleteRecord(in)">Delete</button>
+    <button type="button" (click)="EditRecord(i,in)">Edit</button>
+  </tr>
+</table>
+
+<div class="fixed">
+  Dev.I.L
+</div>
