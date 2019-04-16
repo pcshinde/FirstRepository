@@ -1,0 +1,21 @@
+.center {
+  margin: auto;
+  width: auto;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.fixed {
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  font-size: 25%;
+}
+
+.input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}

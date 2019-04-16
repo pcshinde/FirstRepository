@@ -1,0 +1,5 @@
+Passing value to child component:
+<input type="text" #ref> <br>
+<button type="submit" (click)="submit(ref.value)" >submit</button> <br>
+
+<app-childcomponent [forchild]="value"></app-childcomponent>
